@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Audio demonstracija - Kovas Luksas</title>
+  <meta name="description" content="Garso įrašo demonstracija">
+  <meta name="author" content="Kovas Juan Luksas">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .audio-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    
+    .audio-player-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .audio-icon {
+      font-size: 80px;
+      color: #4cc9f0;
+      margin-bottom: 20px;
+    }
+    
+    .audio-title {
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .audio-description {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+    
+    audio {
+      width: 100%;
+      margin: 20px 0;
+    }
+    
+    audio::-webkit-media-controls-panel {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+    
+    audio::-webkit-media-controls-play-button {
+      background-color: #4cc9f0;
+      border-radius: 50%;
+    }
+    
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
+    
+    .audio-info {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+    }
+    
+    .wave-animation {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    
+    .wave {
+      width: 5px;
+      height: 30px;
+      background: #4cc9f0;
+      margin: 0 3px;
+      border-radius: 10px;
+      animation: wave 1s infinite ease-in-out;
+    }
+    
+    .wave:nth-child(2) { animation-delay: 0.1s; }
+    .wave:nth-child(3) { animation-delay: 0.2s; }
+    .wave:nth-child(4) { animation-delay: 0.3s; }
+    .wave:nth-child(5) { animation-delay: 0.4s; }
+    
+    @keyframes wave {
+      0%, 60%, 100% { transform: scaleY(0.5); }
+      30% { transform: scaleY(1); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Back button -->
+  <a href="services.html" class="back-button">
+    <i class="bi bi-arrow-left"></i>
+  </a>
+
+  <!-- Audio container -->
+  <div class="audio-container">
+    <div class="audio-player-card">
+      <div class="audio-icon">
+        <i class="bi bi-music-note-beamed"></i>
+      </div>
+      
+      <h1 class="audio-title">Laikrodžio garsas</h1>
+      
+      <p class="audio-description">
+        Kvarcinio laikrodžio garsų efektas. Įrašas trukmė: 1 minutė.
+      </p>
+      
+      <!-- Wave animation -->
+      <div class="wave-animation">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+      
+      <!-- Audio player -->
+      <audio controls autoplay>
+        <source src="assets/img/quartz-clock-ticking-one-minute-253102.mp3" type="audio/mpeg">
+        Jūsų naršyklė nepalaiko garso įrašų. Atsisiųskite <a href="assets/media/quartz-clock-ticking-one-minute-253102.mp3" style="color: #4cc9f0;">čia</a>.
+      </audio>
+      
+      <div class="audio-info">
+        <p><i class="bi bi-info-circle me-2"></i>Šaltinis: Pixabay | Formatas: MP3 | Dažnis: 44.1 kHz</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <script>
+    // Wave animation control
+    document.addEventListener('DOMContentLoaded', function() {
+      const audio = document.querySelector('audio');
+      const waves = document.querySelectorAll('.wave');
+      
+      // Pause animation initially
+      waves.forEach(wave => {
+        wave.style.animationPlayState = 'paused';
+      });
+      
+      // Play animation when audio plays
+      audio.addEventListener('play', function() {
+        waves.forEach(wave => {
+          wave.style.animationPlayState = 'running';
+        });
+      });
+      
+      // Pause animation when audio pauses
+      audio.addEventListener('pause', function() {
+        waves.forEach(wave => {
+          wave.style.animationPlayState = 'paused';
+        });
+      });
+      
+      // Auto play audio
+      audio.play().catch(e => console.log("Autoplay prevented:", e));
+    });
+  </script>
+
+</body>
+</html>
