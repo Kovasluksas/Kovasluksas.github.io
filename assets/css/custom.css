@@ -14,46 +14,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600 !important;
 }
 
-h1 { 
-  font-size: 2.5rem !important;
-  color: #1a365d !important;
-}
-
-/* 2. BOTONES */
-.btn {
-  border-radius: 8px !important;
-  padding: 8px 20px !important;
-  transition: all 0.2s !important;
-}
-
-.btn-primary {
-  background-color: #000000 !important;
-  border-color: #000000 !important;
-}
-
-.btn-primary:hover {
-  background-color: #6e8e94 !important;
-  transform: translateY(-2px) !important;
-}
-
-/* 3. ENLACES */
-a {
-  color: #586665 !important;
-  text-decoration: none !important;
-}
-
-a:hover {
-  color: #000203 !important;
-  text-decoration: underline !important;
-}
-
-/* 4. 2 COMPONENTES (mínimo) */
-/* Componente 1: Navbar active link */
-.navmenu ul li a.active {
-  background-color: rgba(42, 157, 143, 0.1) !important;
-  border-radius: 5px !important;
-  font-weight: 600 !important;
-}
 
 /* Componente 2: Footer */
 .footer {
@@ -61,13 +21,69 @@ a:hover {
   color: white !important;
 }
 
-/* 5. ESPACIOS */
-.section {
-  padding: 60px 0 !important;
+/* ===== LD9 – Features / Interests ===== */
+.features-item {
+  border-radius: 12px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+.features-item i {
+  font-size: 36px;
+  margin-bottom: 15px;
 }
+
+.features-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ===== Testimonials – Swiper arrows ===== */
+.testimonials .swiper-button-next,
+.testimonials .swiper-button-prev {
+  color: #0d6efd;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.testimonials .swiper-button-next::after,
+.testimonials .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.testimonials .swiper-button-next:hover,
+.testimonials .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.1);
+}
+
+
+/* Testimonials – Flechas verdes */
+.testimonials .swiper-button-next,
+.testimonials .swiper-button-prev {
+  color: #29cc61; /* verde */
+  background: rgba(41, 204, 97, 0.12);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.testimonials .swiper-button-next::after,
+.testimonials .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.testimonials .swiper-button-next:hover,
+.testimonials .swiper-button-prev:hover {
+  background: rgba(41, 204, 97, 0.25);
+  transform: scale(1.1);
+}
+
 
