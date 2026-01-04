@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Šviesoforų valdymo UI</title>
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/main.css" rel="stylesheet" />
+  <link href="assets/css/custom.css" rel="stylesheet" />
+</head>
+
+<body>
+  <main class="container py-4">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h1 class="h3 m-0">Šviesoforų valdymo sistemos UI</h1>
+      <span class="badge text-bg-dark" id="statusBadge">STOP</span>
+    </div>
+
+
+    <div class="row g-4">
+      <!-- LEFT: INTERSECTION VISUAL -->
+      <div class="col-lg-7">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5">Sankryža (Intersection)</h2>
+
+            <div class="intersection">
+              <!-- North-South -->
+              <div class="light-block">
+                <div class="label">NS</div>
+                <div class="traffic-light" data-light="ns">
+                  <div class="bulb red" data-bulb="red"></div>
+                  <div class="bulb yellow" data-bulb="yellow"></div>
+                  <div class="bulb green" data-bulb="green"></div>
+                </div>
+              </div>
+
+              <!-- East-West -->
+              <div class="light-block">
+                <div class="label">EW</div>
+                <div class="traffic-light" data-light="ew">
+                  <div class="bulb red" data-bulb="red"></div>
+                  <div class="bulb yellow" data-bulb="yellow"></div>
+                  <div class="bulb green" data-bulb="green"></div>
+                </div>
+              </div>
+
+              <!-- small info -->
+              <div class="intersection-info">
+                <div><strong>Fazė:</strong> <span id="phaseText">-</span></div>
+                <div><strong>Liko:</strong> <span id="countdownText">-</span> s</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: CONTROL PANEL -->
+      <div class="col-lg-5">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5">Valdymas (Controls)</h2>
+
+            <div class="mb-3">
+              <label class="form-label">Režimas</label>
+              <select class="form-select" id="modeSelect">
+                <option value="auto" selected>Auto</option>
+                <option value="manual">Manual</option>
+              </select>
+              <div class="form-text">Auto = ciklas pagal laikus. Manual = valdai pats.</div>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-4">
+                <label class="form-label">Žalia (s)</label>
+                <input type="number" min="3" class="form-control" id="tGreen" value="10">
+              </div>
+              <div class="col-4">
+                <label class="form-label">Geltona (s)</label>
+                <input type="number" min="2" class="form-control" id="tYellow" value="3">
+              </div>
+              <div class="col-4">
+                <label class="form-label">All-Red (s)</label>
+                <input type="number" min="0" class="form-control" id="tAllRed" value="1">
+              </div>
+            </div>
+
+            <div class="d-grid gap-2 mb-3">
+              <button class="btn btn-success" id="btnStart">Start</button>
+              <button class="btn btn-outline-secondary" id="btnStop">Stop</button>
+            </div>
+
+            <hr>
+
+            <div class="mb-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>Manual valdymas</strong>
+                <span class="badge text-bg-secondary" id="manualHint">Disabled</span>
+              </div>
+              <div class="form-text mb-2">Veikia tik jei režimas = Manual.</div>
+
+              <div class="row g-2">
+                <div class="col-6 d-grid">
+                  <button class="btn btn-outline-primary" id="btnNSGreen">N–S Green</button>
+                </div>
+                <div class="col-6 d-grid">
+                  <button class="btn btn-outline-primary" id="btnEWGreen">E–W Green</button>
+                </div>
+
+                <div class="col-6 d-grid">
+                  <button class="btn btn-outline-warning" id="btnNSYellow">N–S Yellow</button>
+                </div>
+                <div class="col-6 d-grid">
+                  <button class="btn btn-outline-warning" id="btnEWYellow">E–W Yellow</button>
+                </div>
+
+                <div class="col-12 d-grid">
+                  <button class="btn btn-outline-danger" id="btnAllRed">All Red</button>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="row g-2">
+              <div class="col-6 d-grid">
+                <button class="btn btn-dark" id="btnPed">Pedestrian</button>
+              </div>
+              <div class="col-6 d-grid">
+                <button class="btn btn-danger" id="btnEmergency">Emergency</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/traffic-ui.js"></script>
+
+
+</body>
+</html>

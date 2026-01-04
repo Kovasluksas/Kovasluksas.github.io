@@ -14,7 +14,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600 !important;
 }
 
-
 /* Componente 2: Footer */
 .footer {
   background-color: #ffffff !important;
@@ -37,7 +36,6 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-6px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
-
 
 /* ===== Testimonials – Swiper arrows ===== */
 .testimonials .swiper-button-next,
@@ -62,7 +60,6 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.1);
 }
 
-
 /* Testimonials – Flechas verdes */
 .testimonials .swiper-button-next,
 .testimonials .swiper-button-prev {
@@ -86,4 +83,156 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.1);
 }
 
+/* ===== Memory Game ===== */
+.game-board { width: 100%; }
 
+.mem-card{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  perspective: 1000px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mem-inner{
+  position: absolute;
+  inset: 0;
+  transition: transform 0.35s;
+  transform-style: preserve-3d;
+}
+
+.mem-card.flipped .mem-inner{ transform: rotateY(180deg); }
+
+.mem-face{
+  position: absolute;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 14px;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255,255,255,0.15);
+  user-select:none;
+}
+
+.mem-front{
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.8);
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.mem-back{
+  transform: rotateY(180deg);
+  background: rgba(255,255,255,0.03);
+  font-size: 34px;
+}
+
+.mem-card.matched{
+  opacity: 0.85;
+  cursor: default;
+}
+
+/* Evitar preloader del template */
+#preloader{
+  display:none !important;
+  pointer-events:none !important;
+}
+
+/* ========================================
+   Traffic Light UI (Šviesoforas)
+   ======================================== */
+
+.intersection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+}
+
+.light-block {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+}
+
+.label {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.traffic-light{
+  width: 110px;
+  margin: 0 auto;
+  padding: 14px 10px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+/* 👇 IMPORTANTE: tu HTML usa class="bulb", no "lamp" */
+.traffic-light .bulb{
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  opacity: 0.12 !important; /* a prueba de main.css */
+  filter: grayscale(30%);
+  border: 2px solid rgba(255,255,255,0.10);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.15);
+}
+
+.traffic-light .bulb.red{ background: #ff3b30 !important; }
+.traffic-light .bulb.yellow{ background: #ffcc00 !important; }
+.traffic-light .bulb.green{ background: #34c759 !important; }
+
+.traffic-light .bulb.on{
+  opacity: 1 !important;
+  filter: none !important;
+  box-shadow: 0 0 22px rgba(255,255,255,0.35) !important;
+}
+
+.intersection-info {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  opacity: 0.95;
+}
+
+/* Si usás la clase namu-page para modo oscuro */
+.namu-page .section,
+.namu-page .page-title,
+.namu-page .traffic-panel,
+.namu-page .border,
+.namu-page label,
+.namu-page h1,
+.namu-page h3,
+.namu-page p,
+.namu-page small,
+.namu-page strong,
+.namu-page li {
+  color: #fff !important;
+}
+
+.namu-page .border {
+  border-color: rgba(255,255,255,0.2) !important;
+}
+
+/* Log opcional (si algún día lo usás) */
+#log { list-style: none; padding-left: 0; }
+#log li {
+  opacity: 0.85;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+#log li:last-child { border-bottom: none; }

@@ -1,0 +1,60 @@
+/* ===== Traffic UI ===== */
+.traffic-panel { background: rgba(255,255,255,0.02); }
+
+.tl-card { text-align: center; }
+.tl-title { font-weight: 700; margin-bottom: 10px; }
+
+.traffic-light{
+  width: 110px;
+  margin: 0 auto;
+  padding: 14px 10px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+.lamp{
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  opacity: 0.25;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.15);
+}
+
+.lamp.red{ background: #ff3b30; }
+.lamp.yellow{ background: #ffcc00; }
+.lamp.green{ background: #34c759; }
+
+.lamp.on{
+  opacity: 1;
+  box-shadow: 0 0 18px rgba(255,255,255,0.25);
+}
+
+#log { list-style: none; padding-left: 0; }
+#log li {
+  opacity: 0.85;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+#log li:last-child { border-bottom: none; }
+
+.namu-page .section,
+.namu-page .page-title,
+.namu-page .traffic-panel,
+.namu-page .border,
+.namu-page label,
+.namu-page h1,
+.namu-page h3,
+.namu-page p,
+.namu-page small,
+.namu-page strong,
+.namu-page li {
+  color: #fff !important;
+}
+
+.namu-page .border {
+  border-color: rgba(255,255,255,0.2) !important;
+}
