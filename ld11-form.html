@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <title>LD11 – Feedback Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Main styles -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+
+</head>
+<body class="namu-page">
+
+    <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Pagrindinis</a></li>
+          <li><a href="about.html">Apie</a></li>
+          <li><a href="resume.html">Aprašymas</a></li>
+          <li><a href="services.html">Paslaugos</a></li>
+          <li><a href="portfolio.html">Portfelis</a></li>
+          <li><a href="namu-darbas.html">Namų darbas</a></li>
+          <li><a href="ld11-form.html" class="active">LD11</a></li>
+        </ul>
+      
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      
+
+<main class="container py-5">
+  <h1 class="mb-4">LD11 – Feedback Form</h1>
+
+  <form id="feedbackForm" novalidate>
+
+    <!-- Vardas -->
+    <div class="mb-3">
+      <label for="vardas" class="form-label">Vardas</label>
+      <input type="text" id="vardas" class="form-control" />
+      <div id="err-vardas" class="form-error d-none">
+        Įveskite vardą
+      </div>
+    </div>
+
+    <!-- Pavardė -->
+    <div class="mb-3">
+      <label for="pavarde" class="form-label">Pavardė</label>
+      <input type="text" id="pavarde" class="form-control" />
+      <div id="err-pavarde" class="form-error d-none">
+        Įveskite pavardę
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">El. paštas</label>
+      <input type="email" id="email" class="form-control" />
+      <div id="err-email" class="form-error d-none">
+        Neteisingas el. pašto formatas
+      </div>
+    </div>
+
+    <!-- Telefonas -->
+    <div class="mb-3">
+      <label for="telefonas" class="form-label">Telefonas</label>
+      <input type="text" id="telefonas" class="form-control" placeholder="+370 6xx xxxxx" />
+      <div id="err-telefonas" class="form-error d-none">
+        Formatas: +370 6xx xxxxx
+      </div>
+    </div>
+
+    <!-- Adresas -->
+    <div class="mb-3">
+      <label for="adresas" class="form-label">Adresas</label>
+      <input type="text" id="adresas" class="form-control" />
+      <div id="err-adresas" class="form-error d-none">
+        Įveskite adresą
+      </div>
+    </div>
+
+    <!-- Scores -->
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="q1" class="form-label">Klausimas 1 (1–10)</label>
+        <input type="number" id="q1" class="form-control" min="1" max="10" />
+        <div id="err-q1" class="form-error d-none">1–10</div>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label for="q2" class="form-label">Klausimas 2 (1–10)</label>
+        <input type="number" id="q2" class="form-control" min="1" max="10" />
+        <div id="err-q2" class="form-error d-none">1–10</div>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label for="q3" class="form-label">Klausimas 3 (1–10)</label>
+        <input type="number" id="q3" class="form-control" min="1" max="10" />
+        <div id="err-q3" class="form-error d-none">1–10</div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="d-flex gap-3 mt-4">
+      <button type="submit" id="submitBtn" class="btn btn-primary">
+        Siųsti
+      </button>
+      <button type="button" id="resetBtn" class="btn btn-outline-secondary">
+        Išvalyti
+      </button>
+    </div>
+
+  </form>
+
+  <!-- Results -->
+  <div id="resultBox" class="form-success d-none mt-4">
+    <p id="resultText"></p>
+    <strong id="avgText"></strong>
+  </div>
+
+  <!-- Success popup -->
+  <div id="successPopup" class="alert alert-success d-none mt-3">
+    Duomenys sėkmingai išsiųsti!
+  </div>
+
+</main>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/ld11-form.js"></script>
+
+</body>
+</html>
